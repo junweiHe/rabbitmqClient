@@ -1,4 +1,4 @@
-package com.cmcc.rabbitmq.client.bean;
+package com.chooshine.rabbitmq.client.bean;
 
 import java.io.Serializable;
 import java.util.Arrays;

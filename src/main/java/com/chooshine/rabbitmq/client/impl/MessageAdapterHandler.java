@@ -1,4 +1,4 @@
-package com.cmcc.rabbitmq.client.impl;
+package com.chooshine.rabbitmq.client.impl;
 
 import java.io.IOException;
 import java.util.Set;
@@ -9,9 +9,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.util.StringUtils;
 
-import com.cmcc.rabbitmq.client.CodecFactory;
-import com.cmcc.rabbitmq.client.EventProcesser;
-import com.cmcc.rabbitmq.client.bean.EventMessage;
+import com.chooshine.rabbitmq.client.CodecFactory;
+import com.chooshine.rabbitmq.client.EventProcesser;
+import com.chooshine.rabbitmq.client.bean.EventMessage;
 
 public class MessageAdapterHandler{
 	private static final Logger logger = LoggerFactory.getLogger(MessageAdapterHandler.class);

@@ -1,4 +1,4 @@
-package com.cmcc.rabbitmq.client.config;
+package com.chooshine.rabbitmq.client.config;
 
 public class EventControlConfig {
 	private final static int DEFAULT_PORT = 5672;  

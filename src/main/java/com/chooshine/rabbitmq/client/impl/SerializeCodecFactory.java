@@ -1,4 +1,4 @@
-package com.cmcc.rabbitmq.client.impl;
+package com.chooshine.rabbitmq.client.impl;
 
 import java.io.Closeable;
 import java.io.IOException;
@@ -6,7 +6,7 @@ import java.io.IOException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.cmcc.rabbitmq.client.CodecFactory;
+import com.chooshine.rabbitmq.client.CodecFactory;
 
 public abstract class SerializeCodecFactory implements CodecFactory{
 	protected static final Logger logger = LoggerFactory.getLogger(SerializeCodecFactory.class);

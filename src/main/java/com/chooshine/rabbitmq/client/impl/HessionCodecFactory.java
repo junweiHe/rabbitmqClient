@@ -1,4 +1,4 @@
-package com.cmcc.rabbitmq.client.impl;
+package com.chooshine.rabbitmq.client.impl;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -6,7 +6,7 @@ import java.io.IOException;
 
 import com.caucho.hessian.io.HessianInput;
 import com.caucho.hessian.io.HessianOutput;
-import com.cmcc.rabbitmq.client.CodecFactory;
+import com.chooshine.rabbitmq.client.CodecFactory;
 
 /**
  * Hassion方式实现的序列化与反序列化

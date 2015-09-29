@@ -1,4 +1,4 @@
-package com.cmcc.rabbitmq.client.impl;
+package com.chooshine.rabbitmq.client.impl;
 
 import java.util.HashMap;
 import java.util.HashSet;
@@ -23,11 +23,11 @@ import org.springframework.amqp.support.converter.MessageConverter;
 import org.springframework.amqp.support.converter.SerializerMessageConverter;
 import org.springframework.util.StringUtils;
 
-import com.cmcc.rabbitmq.client.CodecFactory;
-import com.cmcc.rabbitmq.client.EventController;
-import com.cmcc.rabbitmq.client.EventProcesser;
-import com.cmcc.rabbitmq.client.EventTemplate;
-import com.cmcc.rabbitmq.client.config.EventControlConfig;
+import com.chooshine.rabbitmq.client.CodecFactory;
+import com.chooshine.rabbitmq.client.EventController;
+import com.chooshine.rabbitmq.client.EventProcesser;
+import com.chooshine.rabbitmq.client.EventTemplate;
+import com.chooshine.rabbitmq.client.config.EventControlConfig;
 /** 
  * 和rabbitmq通信的控制器，主要负责： 
  * <p>1、和rabbitmq建立连接</p> 

@@ -1,4 +1,4 @@
-package com.cmcc.rabbitmq.client;
+package com.chooshine.rabbitmq.client;
 
 import java.util.Map;
 

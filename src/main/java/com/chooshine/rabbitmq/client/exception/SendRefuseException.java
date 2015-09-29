@@ -1,4 +1,4 @@
-package com.cmcc.rabbitmq.client.exception;
+package com.chooshine.rabbitmq.client.exception;
 
 @SuppressWarnings("serial")
 public class SendRefuseException extends Exception{

@@ -1,4 +1,4 @@
-package com.cmcc.rabbitmq.client.impl;
+package com.chooshine.rabbitmq.client.impl;
 
 import java.io.IOException;
 
@@ -8,10 +8,10 @@ import org.springframework.amqp.AmqpException;
 import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.util.StringUtils;
 
-import com.cmcc.rabbitmq.client.CodecFactory;
-import com.cmcc.rabbitmq.client.EventTemplate;
-import com.cmcc.rabbitmq.client.bean.EventMessage;
-import com.cmcc.rabbitmq.client.exception.SendRefuseException;
+import com.chooshine.rabbitmq.client.CodecFactory;
+import com.chooshine.rabbitmq.client.EventTemplate;
+import com.chooshine.rabbitmq.client.bean.EventMessage;
+import com.chooshine.rabbitmq.client.exception.SendRefuseException;
 
 public class SimpleEventTemplate implements EventTemplate {
 	private static final Logger logger = LoggerFactory.getLogger(SimpleEventTemplate.class);
