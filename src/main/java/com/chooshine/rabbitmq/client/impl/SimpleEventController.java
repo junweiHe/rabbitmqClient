@@ -23,11 +23,14 @@ import org.springframework.amqp.support.converter.MessageConverter;
 import org.springframework.amqp.support.converter.SerializerMessageConverter;
 import org.springframework.util.StringUtils;
 
-import com.chooshine.rabbitmq.client.CodecFactory;
 import com.chooshine.rabbitmq.client.EventController;
 import com.chooshine.rabbitmq.client.EventProcesser;
 import com.chooshine.rabbitmq.client.EventTemplate;
+import com.chooshine.rabbitmq.client.codec.CodecFactory;
+import com.chooshine.rabbitmq.client.codec.HessionCodecFactory;
 import com.chooshine.rabbitmq.client.config.EventControlConfig;
+import com.chooshine.rabbitmq.client.handler.MessageAdapterHandler;
+import com.chooshine.rabbitmq.client.handler.MessageErrorHandler;
 /** 
  * 和rabbitmq通信的控制器，主要负责： 
  * <p>1、和rabbitmq建立连接</p> 

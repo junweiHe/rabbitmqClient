@@ -1,4 +1,4 @@
-package com.chooshine.rabbitmq.client.impl;
+package com.chooshine.rabbitmq.client.handler;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

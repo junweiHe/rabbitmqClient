@@ -1,4 +1,4 @@
-package com.chooshine.rabbitmq.client;
+package com.chooshine.rabbitmq.client.codec;
 
 import java.io.IOException;
 

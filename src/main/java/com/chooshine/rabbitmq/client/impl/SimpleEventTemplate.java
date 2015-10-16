@@ -8,9 +8,9 @@ import org.springframework.amqp.AmqpException;
 import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.util.StringUtils;
 
-import com.chooshine.rabbitmq.client.CodecFactory;
 import com.chooshine.rabbitmq.client.EventTemplate;
 import com.chooshine.rabbitmq.client.bean.EventMessage;
+import com.chooshine.rabbitmq.client.codec.CodecFactory;
 import com.chooshine.rabbitmq.client.exception.SendRefuseException;
 
 public class SimpleEventTemplate implements EventTemplate {

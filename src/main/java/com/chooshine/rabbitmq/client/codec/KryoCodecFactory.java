@@ -1,4 +1,4 @@
-package com.chooshine.rabbitmq.client.impl;
+package com.chooshine.rabbitmq.client.codec;
 
 import java.math.BigDecimal;
 import java.math.BigInteger;

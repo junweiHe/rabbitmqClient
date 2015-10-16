@@ -1,5 +1,6 @@
 package com.chooshine.rabbitmq.client;
 
+import com.chooshine.rabbitmq.client.codec.CodecFactory;
 import com.chooshine.rabbitmq.client.exception.SendRefuseException;
 
 public interface EventTemplate {
