@@ -43,7 +43,8 @@ public class MessageAdapterHandler{
             return;  
         }  
     }
-    protected void add(String queueName, String exchangeName, EventProcesser processor,CodecFactory codecFactory) {  
+
+    public void add(String queueName, String exchangeName, EventProcesser processor, CodecFactory codecFactory) {
         if (StringUtils.isEmpty(queueName) || StringUtils.isEmpty(exchangeName) || processor == null || codecFactory == null) {  
             throw new RuntimeException("queueName and exchangeName can not be empty,and processor or codecFactory can not be null. ");  
         }  
@@ -54,7 +55,7 @@ public class MessageAdapterHandler{
         }  
     }  
   
-    protected Set<String> getAllBinding() {  
+    public Set<String> getAllBinding() {
         Set<String> keySet = epwMap.keySet();  
         return keySet;  
     }  
