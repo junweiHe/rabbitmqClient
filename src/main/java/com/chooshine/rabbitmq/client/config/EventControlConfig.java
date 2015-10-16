@@ -41,7 +41,12 @@ public class EventControlConfig {
     }  
     public EventControlConfig(String serverHost, int port, String username,
             String password){
-    	this(serverHost,port,username,password,null,0,DEFAULT_PROCESS_THREAD_NUM,DEFAULT_PROCESS_THREAD_NUM);
+        this(serverHost, port, username, password, null, 0, DEFAULT_PROCESS_THREAD_NUM, DEFAULT_PROCESS_THREAD_NUM);
+    }
+
+    public EventControlConfig(String serverHost, int port, String username, String password, String virtualHost) {
+        this(serverHost, port, username, password, virtualHost, 0, DEFAULT_PROCESS_THREAD_NUM,
+                DEFAULT_PROCESS_THREAD_NUM);
     }
     public EventControlConfig(String serverHost, int port, String username,  
             String password, String virtualHost, int connectionTimeout,  
