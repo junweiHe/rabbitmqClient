@@ -2,9 +2,9 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.cmcc.rabbitmq.client</groupId>
+  <groupId>com.chooshine.rabbitmq.client</groupId>
   <artifactId>rabbitmqClient</artifactId>
-  <version>0.0.1</version>
+  <version>1.0.0</version>
   <packaging>jar</packaging>
 
   <name>rabbitmqClient</name>
@@ -52,7 +52,7 @@
 		<version>1.04</version>
 	</dependency>
   </dependencies>
-  <distributionManagement>
+  <!-- <distributionManagement>
 		<repository>
 			<id>nexus-releases</id>
 			<name>Nexus Release Repository</name>
@@ -63,5 +63,5 @@
 			<name>Nexus Snapshot Repository</name>
 			<url>http://192.168.13.36:8081/nexus/content/repositories/snapshots/</url>
 		</snapshotRepository>
-	</distributionManagement>
+	</distributionManagement> -->
 </project>

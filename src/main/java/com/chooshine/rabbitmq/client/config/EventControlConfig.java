@@ -37,7 +37,8 @@ public class EventControlConfig {
     private int prefetchSize;  
       
     public EventControlConfig(String serverHost) {  
-        this(serverHost,DEFAULT_PORT,DEFAULT_USERNAME,DEFAULT_PASSWORD,null,0,DEFAULT_PROCESS_THREAD_NUM,DEFAULT_PROCESS_THREAD_NUM);  
+        this(serverHost, DEFAULT_PORT, DEFAULT_USERNAME, DEFAULT_PASSWORD, null, 0, DEFAULT_PROCESS_THREAD_NUM,
+                DEFAULT_PROCESS_THREAD_NUM);
     }  
     public EventControlConfig(String serverHost, int port, String username,
             String password){
