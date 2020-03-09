@@ -13,7 +13,9 @@ public class EventControlConfig {
       
     private String serverHost ;  
       
-    private int port = DEFAULT_PORT;  
+    private int port = DEFAULT_PORT;
+
+    private String address;
       
     private String username = DEFAULT_USERNAME;  
       
@@ -45,11 +47,21 @@ public class EventControlConfig {
         this(serverHost, port, username, password, null, 0, DEFAULT_PROCESS_THREAD_NUM, DEFAULT_PROCESS_THREAD_NUM);
     }
 
+    public EventControlConfig(String address, String username, String password) {
+        this.address = address;
+        this.username = username;
+        this.password = password;
+        this.virtualHost = virtualHost;
+        this.connectionTimeout = connectionTimeout>0?connectionTimeout:0;
+        this.eventMsgProcessNum = eventMsgProcessNum>0?eventMsgProcessNum:DEFAULT_PROCESS_THREAD_NUM;
+        this.prefetchSize = prefetchSize>0?prefetchSize:PREFETCH_SIZE;
+    }
+
     public EventControlConfig(String serverHost, int port, String username, String password, String virtualHost) {
         this(serverHost, port, username, password, virtualHost, 0, DEFAULT_PROCESS_THREAD_NUM,
                 DEFAULT_PROCESS_THREAD_NUM);
     }
-    public EventControlConfig(String serverHost, int port, String username,  
+    public EventControlConfig(String serverHost, int port, String username,
             String password, String virtualHost, int connectionTimeout,  
             int eventMsgProcessNum,int prefetchSize) {  
         this.serverHost = serverHost;  
@@ -92,5 +104,13 @@ public class EventControlConfig {
   
     public int getPrefetchSize() {  
         return prefetchSize;  
-    } 
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
 }

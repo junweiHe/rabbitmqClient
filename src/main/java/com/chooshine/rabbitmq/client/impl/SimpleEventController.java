@@ -68,12 +68,17 @@ public class SimpleEventController implements EventController{
       
     private static SimpleEventController defaultEventController;
       
-    public synchronized static SimpleEventController getInstance(EventControlConfig config){  
+    public synchronized static SimpleEventController getInstance(EventControlConfig config){
         if(defaultEventController==null){  
             defaultEventController = new SimpleEventController(config);  
         }  
         return defaultEventController;  
     }
+
+    public static  SimpleEventController createInstance(EventControlConfig config) {
+        return new SimpleEventController(config);
+    }
+
     /**
      * spring 配置使用
      * @param config+
@@ -96,10 +101,14 @@ public class SimpleEventController implements EventController{
      * 初始化rabbitmq连接 
      */  
     private void initRabbitConnectionFactory() {
-        rabbitConnectionFactory = new CachingConnectionFactory(config.getServerHost(),config.getPort());
-//        rabbitConnectionFactory.setHost(config.getServerHost());
+        rabbitConnectionFactory = new CachingConnectionFactory();
+        if(config.getAddress() != null && config.getAddress().length() > 0) {
+            rabbitConnectionFactory.setAddresses(config.getAddress());
+        } else {
+            rabbitConnectionFactory.setHost(config.getServerHost());
+            rabbitConnectionFactory.setPort(config.getPort());
+        }
         rabbitConnectionFactory.setChannelCacheSize(config.getEventMsgProcessNum());
-//        rabbitConnectionFactory.setPort(config.getPort());
         rabbitConnectionFactory.setUsername(config.getUsername());
         rabbitConnectionFactory.setPassword(config.getPassword());
         if (!StringUtils.isEmpty(config.getVirtualHost())) {

@@ -7,15 +7,15 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.cmcc.rabbitmq.client.EventProcesser;
-import com.cmcc.rabbitmq.client.EventTemplate;
-import com.cmcc.rabbitmq.client.config.EventControlConfig;
-import com.cmcc.rabbitmq.client.exception.SendRefuseException;
-import com.cmcc.rabbitmq.client.impl.SimpleEventController;
+import com.chooshine.rabbitmq.client.EventProcesser;
+import com.chooshine.rabbitmq.client.EventTemplate;
+import com.chooshine.rabbitmq.client.config.EventControlConfig;
+import com.chooshine.rabbitmq.client.exception.SendRefuseException;
+import com.chooshine.rabbitmq.client.impl.SimpleEventController;
 
 public class ClientTest {
 	
-	private String defaultHost = "192.168.13.34";
+	private String defaultHost = "121.";
 	
 	private String defaultExchange = "EXCHANGE_DIRECT_TEST";
 	

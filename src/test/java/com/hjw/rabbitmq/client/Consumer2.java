@@ -1,8 +1,8 @@
 package com.hjw.rabbitmq.client;
 
-import com.cmcc.rabbitmq.client.EventProcesser;
-import com.cmcc.rabbitmq.client.config.EventControlConfig;
-import com.cmcc.rabbitmq.client.impl.SimpleEventController;
+import com.chooshine.rabbitmq.client.EventProcesser;
+import com.chooshine.rabbitmq.client.config.EventControlConfig;
+import com.chooshine.rabbitmq.client.impl.SimpleEventController;
 
 public class Consumer2 implements EventProcesser{
 private String defaultHost = "192.168.13.34";

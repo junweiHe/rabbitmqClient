@@ -4,7 +4,7 @@
 
   <groupId>com.chooshine.rabbitmq.client</groupId>
   <artifactId>rabbitmqClient</artifactId>
-  <version>1.0.0</version>
+  <version>2.0.0</version>
   <packaging>jar</packaging>
 
   <name>rabbitmqClient</name>
@@ -24,17 +24,17 @@
     <dependency>  
         <groupId>com.rabbitmq</groupId>  
         <artifactId>amqp-client</artifactId>  
-        <version>3.5.0</version>  
+        <version>3.6.0</version>  
     </dependency>  
     <dependency>  
         <groupId>org.springframework.amqp</groupId>  
         <artifactId>spring-amqp</artifactId>  
-        <version>1.4.5.RELEASE</version>  
+        <version>1.5.6.RELEASE</version>  
     </dependency>  
     <dependency>  
         <groupId>org.springframework.amqp</groupId>  
         <artifactId>spring-rabbit</artifactId>  
-        <version>1.4.5.RELEASE</version>  
+        <version>1.5.6.RELEASE</version>  
     </dependency>  
     <dependency>  
         <groupId>com.caucho</groupId>  
@@ -44,7 +44,7 @@
     <dependency>
 	    <groupId>ch.qos.logback</groupId>
 	    <artifactId>logback-classic</artifactId>
-	    <version>1.1.2</version>
+	    <version>1.1.3</version>
 	</dependency>
 	<dependency>
 		<groupId>com.googlecode</groupId>
@@ -52,16 +52,18 @@
 		<version>1.04</version>
 	</dependency>
   </dependencies>
-  <!-- <distributionManagement>
-		<repository>
-			<id>nexus-releases</id>
-			<name>Nexus Release Repository</name>
-			<url>http://192.168.13.36:8081/nexus/content/repositories/releases/</url>
-		</repository>
-		<snapshotRepository>
-			<id>nexus-snapshots</id>
-			<name>Nexus Snapshot Repository</name>
-			<url>http://192.168.13.36:8081/nexus/content/repositories/snapshots/</url>
-		</snapshotRepository>
-	</distributionManagement> -->
+  
+  <build>
+  	<plugins>
+		<plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-compiler-plugin</artifactId>
+			<configuration>
+				<source>1.7</source>
+				<target>1.7</target>
+				<encoding>utf8</encoding>
+			</configuration>
+		</plugin>
+	</plugins>
+  </build>
 </project>

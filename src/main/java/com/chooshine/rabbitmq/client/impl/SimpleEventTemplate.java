@@ -20,23 +20,15 @@ public class SimpleEventTemplate implements EventTemplate {
 	private CodecFactory codec;
 	
 	private SimpleEventController eec;
-//  
+
 	public SimpleEventTemplate(AmqpTemplate template,
           CodecFactory codec, SimpleEventController eec) {
 		this.template = template;
 		this.codec = codec;
 		this.eec = eec;
 	}  
-//	public SimpleEventTemplate(AmqpTemplate template,CodecFactory codec) {
-//		this.template = template;
-//		this.codec = codec;
-//	}
-//	
-//	public SimpleEventTemplate(AmqpTemplate template) {
-//		this.template = template;
-//		this.codec = new HessionCodecFactory();
-//	}
-	
+
+
 	@Override
 	public void send(String queueName, String exchangeName, Object eventContent)
 			throws SendRefuseException {
@@ -80,5 +72,15 @@ public class SimpleEventTemplate implements EventTemplate {
             throw new SendRefuseException("send event fail");  
         }  
 	}
+
+    @Override
+    public void send(String queueName, String exchangeName, String msg) throws SendRefuseException {
+        try {
+            template.convertAndSend(exchangeName, queueName, msg);
+        } catch (AmqpException e) {
+            logger.error("send event fail. Event Message : [" + msg + "]", e);
+            throw new SendRefuseException("send event fail");
+        }
+    }
 
 }

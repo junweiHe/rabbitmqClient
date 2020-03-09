@@ -1,27 +1,27 @@
 package com.hjw.rabbitmq.client;
 
-import java.util.concurrent.TimeUnit;
+import java.util.Random;
 
-import com.cmcc.rabbitmq.client.EventTemplate;
-import com.cmcc.rabbitmq.client.config.EventControlConfig;
-import com.cmcc.rabbitmq.client.exception.SendRefuseException;
-import com.cmcc.rabbitmq.client.impl.KryoCodecFactory;
-import com.cmcc.rabbitmq.client.impl.SimpleEventController;
+import com.chooshine.rabbitmq.client.EventTemplate;
+import com.chooshine.rabbitmq.client.config.EventControlConfig;
+import com.chooshine.rabbitmq.client.exception.SendRefuseException;
+import com.chooshine.rabbitmq.client.impl.SimpleEventController;
 
 public class Producer {
 	
-	private String defaultHost = "192.168.12.85";
+    private String defaultHost = "121.40.87.102";
 	
-	private String defaultExchange = "EXCHANGE_APP_ROUTE";
+    private String defaultExchange = "EXCHANGE_ALARM_QZJ";
 	
-	private String defaultQueue = "APP_ROUTE_QUEUE";
+    private String defaultQueue = "QUEUE_ALARM_QZJ";
 	
 	private SimpleEventController controller;
 	
 	private EventTemplate eventTemplate;
 	
 	public Producer(){
-		EventControlConfig config = new EventControlConfig(defaultHost,5672,"approute","approute");
+        EventControlConfig config = new EventControlConfig(defaultHost, 5672, "chooshine", "chooshine_2012", "alarm",
+                5000, 0, 0);
 		controller = SimpleEventController.getInstance(config);
 		eventTemplate = controller.getEopEventTemplate();
 		//controller.add(defaultQueue, defaultExchange, new ApiProcessEventProcessor());
@@ -29,25 +29,31 @@ public class Producer {
 		
 	}
 	public void sendMessage() throws SendRefuseException{
-		int i = 1;
+        int i = 0;
 //		KryoCodecFactory codc = new KryoCodecFactory();
-//		while(true){
-			eventTemplate.send(defaultQueue, defaultExchange, "{\"raw\":-1449872}");
-//			i++;
-//			try {
-//				TimeUnit.SECONDS.sleep(5);
-//			} catch (InterruptedException e) {
-//				e.printStackTrace();
-//			}
-//			if(i==10) break;
-//		}
+        Random ran = new Random();
+        while (true) {
+            int str = ran.nextInt(18);
+
+            eventTemplate.send(defaultQueue, defaultExchange,
+                    "{\"mp_items\":[{\"mp_id\":\"149\",\"data_time\":\"2015-11-03 15:30:00\",\"data_items\":[{\"name\":\"100003\",\"value\":\""
+                            + str + "\"}]}]}");
+            i++;
+            //            try {
+            //                TimeUnit.SECONDS.sleep(5);
+            //            } catch (InterruptedException e) {
+            //                e.printStackTrace();  
+            //            }
+            if (i == 5)
+                break;
+        }
 	}
 	public static void main(String[] args) {
-		Producer p = new Producer();
-		try {
-			p.sendMessage();
-		} catch (SendRefuseException e) {
-			e.printStackTrace();
-		}
+        Producer p = new Producer();
+        try {
+            p.sendMessage();
+        } catch (SendRefuseException e) {
+            e.printStackTrace();
+        }
 	}
 }
